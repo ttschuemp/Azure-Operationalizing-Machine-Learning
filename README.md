@@ -44,5 +44,10 @@ In the python notebook the details of the triggered pipeline runs can be checked
 
 ## Screen Recording
 https://youtu.be/xawKrqBMtSw
+
 ## Standout Suggestions
 Unfortunately due to the VM crash there was little time to do standout suggestions but some experiments with coding in different pipeline steps were explored.
+
+## Future development and improvements
+- Working with different steps in the ML pipeline such as feature engineering, parallelisation
+- Add model registration and release to pipeline
