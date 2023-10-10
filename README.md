@@ -13,32 +13,46 @@ Upload the Bank Marketing dataset and make it available:
 Create a training pipeline with AutoML: 
 
 <img width="1188" alt="Screenshot 2023-10-09 at 18 25 32" src="https://github.com/ttschuemp/Azure-Operationalizing-Machine-Learning/assets/46277840/9de1b4c4-3a42-47f4-8ea6-49c3b971cc4a">
+
+Check in the details for the best performing model. You can check many metrics like AOC or accuracy of the model. 
 <img width="2131" alt="Screenshot 2023-10-09 at 18 26 29" src="https://github.com/ttschuemp/Azure-Operationalizing-Machine-Learning/assets/46277840/eb16ab7d-b9e3-4034-9482-1b5a7e9927a0">
 
 
-The best model was considered: 
+The best model was considered with an Accuracy of 91.5%: 
 <img width="1492" alt="Screenshot 2023-10-09 at 14 25 02" src="https://github.com/ttschuemp/Azure-Operationalizing-Machine-Learning/assets/46277840/51618e1d-7317-4ae8-91b1-b7212c77c602">
 
-And released as a webservice based endpoint with Application Insights activated for logging purposes: 
+And released as a webservice based endpoint with Application Insights activated for logging purposes. Important that the deployment is healthy and make sure to enable the application insights when deploying such that later on logs can be checked. The endpoint can be tested in the Test menu.
 <img width="1791" alt="Screenshot 2023-10-09 at 18 30 38" src="https://github.com/ttschuemp/Azure-Operationalizing-Machine-Learning/assets/46277840/4df15bfd-1f7a-4d8e-974d-7a3fe1ad22b7">
 
-Test endpoint with python file: 
+This is another way to test the endpoint with the custom python script. We can see that the endpoint/model returns `Yes` and `No` as a result which is what we expected from the exercise: 
 <img width="1078" alt="Screenshot 2023-10-09 at 17 45 12" src="https://github.com/ttschuemp/Azure-Operationalizing-Machine-Learning/assets/46277840/4dc43770-1854-439c-8cfc-8877c50bd340">
 
-Checking logs: 
+The application logs can be checked by running the log.py file or also in the azure ML studio directly:
 <img width="1717" alt="Screenshot 2023-10-09 at 16 27 32" src="https://github.com/ttschuemp/Azure-Operationalizing-Machine-Learning/assets/46277840/8d657aeb-bfe2-409e-b1e3-3e0de6353a5e">
+This is very handy when checking for any errors or bugs while the application is running in production.  
 <img width="1756" alt="Screenshot 2023-10-09 at 16 27 59" src="https://github.com/ttschuemp/Azure-Operationalizing-Machine-Learning/assets/46277840/84ea38e8-8e8a-49dd-9036-33aead060b01">
 
 The training pipeline was registered and an endpoint created to allow for remotely or automatically triggering the training pipeline: 
 
 <img width="1573" alt="Screenshot 2023-10-09 at 18 35 28" src="https://github.com/ttschuemp/Azure-Operationalizing-Machine-Learning/assets/46277840/6bbccdcb-aa91-486b-9dbc-ab799ef07798">
+The pipeline endpoint shows the training pipeline: 
 <img width="1517" alt="Screenshot 2023-10-09 at 18 33 43" src="https://github.com/ttschuemp/Azure-Operationalizing-Machine-Learning/assets/46277840/80b69cfb-3659-4d2a-9f95-def38b39f3f4">
-<img width="1881" alt="Screenshot 2023-10-09 at 18 38 42" src="https://github.com/ttschuemp/Azure-Operationalizing-Machine-Learning/assets/46277840/96c9bcb4-6bc6-4803-9290-c325f296b9c0">
+In the Published Pipeline overview section you can see if the pipelien is active. Status of the public pipeline is active: 
+<img width="1529" alt="Screenshot 2023-10-10 at 14 04 18" src="https://github.com/ttschuemp/Azure-Operationalizing-Machine-Learning/assets/46277840/3442ae29-b103-4e4e-8ee0-fa773b9bc7e7">
 
-Swagger is running on localhost:
+
+
+Swagger is used for testing an API but also for documenting and visualizing it. Swagger is a tool that helps you design, document, and interact with REST APIs. It provides a user-friendly interface for developers, allowing them to. We used Swagger to also test our endpoint, running on localhost here:
 
 <img width="1559" alt="Screenshot 2023-10-09 at 17 22 35" src="https://github.com/ttschuemp/Azure-Operationalizing-Machine-Learning/assets/46277840/579e40d1-c903-4c7b-9a89-3068d4fb3d29">
+Here also the input data gets visualized by swagger which helps to explain how the API works: 
 <img width="1569" alt="Screenshot 2023-10-09 at 17 25 12" src="https://github.com/ttschuemp/Azure-Operationalizing-Machine-Learning/assets/46277840/816a972e-fc58-45cf-8975-e852d7426b76">
+
+To view the progress of the model you can check the run details: 
+(Note that the ouput of the RunDetails function is not properly rendering in VS Code. Progress can also be checked on the Details Page)
+<img width="1840" alt="Screenshot 2023-10-10 at 18 09 57" src="https://github.com/ttschuemp/Azure-Operationalizing-Machine-Learning/assets/46277840/e79f9ec8-5a0d-4c24-9fa8-92bc5a5550c3">
+
+
 
 ## Screen Recording
 https://youtu.be/DSi1iSVxZBw
