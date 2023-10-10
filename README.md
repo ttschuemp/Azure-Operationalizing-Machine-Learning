@@ -1,6 +1,6 @@
 # Building an end-to-end training and deployment solution for MLOps 
 
-In this project an end-to-end ML model pipeline has been buil, published and triggered to train a new model which was then deployed in an Azure container instance and made available for inference. The pipeline starts with the default data set for bank marketing and then employs an auto ML step to create a model.
+This project is centered on a dataset that documents the results of marketing campaigns carried out by a banking institution. These campaigns primarily involved phone calls during which customers were approached to consider subscribing to a bank term deposit. The objective is to utilize customer attributes like age, occupation, education, default status, and balance to forecast whether a customer will ultimately opt for the term deposit. To achieve this, a classification task is performed using Azure Auto ML, and the best performing model is deployed. Once deployed, the model becomes accessible for consumption. Additionally, an Azure pipeline is designed, published, and made available for consumption as well.
 
 ## Architectural Diagram
 The project is built to include a simple training pipeline based on a registered dataset in Azure ML. The best model of a successful run is then deployed as a Azure container instance with logging through Application insights. The pipeline can be triggered through an endpoint or Azure ML directly. 
